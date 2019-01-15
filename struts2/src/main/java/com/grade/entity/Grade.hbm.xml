@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-1-10 21:50:43 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.grade.entity.Grade" table="grade" catalog="dt72">
+        <id name="gid" type="java.lang.Integer">
+            <column name="gid" />
+            <generator class="identity" />
+        </id>
+        <property name="gname" type="string">
+            <column name="gname" length="20" not-null="true" />
+        </property>
+        <set name="studentses" table="students" inverse="true" lazy="true" fetch="select" cascade="all">
+            <key>
+                <column name="gid" />
+            </key>
+            <one-to-many class="com.grade.entity.Students" />
+        </set>
+    </class>
+</hibernate-mapping>

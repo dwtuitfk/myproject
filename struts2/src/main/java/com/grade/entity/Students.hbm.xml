@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-1-10 21:50:43 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.grade.entity.Students" table="students" catalog="dt72">
+        <id name="xh" type="int">
+            <column name="xh" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="grade" class="com.grade.entity.Grade" fetch="select">
+            <column name="gid" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="20" not-null="true" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" length="8" />
+        </property>
+        <property name="birthday" type="date">
+            <column name="birthday" length="10" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="50" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="11" />
+        </property>
+        <property name="state" type="java.lang.Byte">
+            <column name="state" />
+        </property>
+    </class>
+</hibernate-mapping>
